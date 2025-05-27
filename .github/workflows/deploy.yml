@@ -3,7 +3,7 @@ name: Deploy HTML to GitHub Pages
 on:
   push:
     branches:
-      - main  # Or your default branch
+      - main
 
 permissions:
   contents: read
@@ -24,7 +24,7 @@ jobs:
       - name: Upload static files
         uses: actions/upload-pages-artifact@v2
         with:
-          path: '.'  # Upload root directory (your HTML)
+          path: '.'  # Or 'dist' or 'public' if your site is in a folder
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v3
